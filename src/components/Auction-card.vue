@@ -1,27 +1,42 @@
 <script setup lang="ts">
-import {ref} from "vue";
+import {ref, onMounted} from "vue";
 import {useRouter} from "vue-router";
 
-const car = {
-  title: 'Tayota Tiguan RX5',
-  currentBid: 50000,
-  yourBid: 50000,
-  images: [
-    '/public/TemplateCarPic.png',
-    '/public/TemplateCarPic.png',
-    '/public/TemplateCarPic.png'
-  ]
-}
+const props = defineProps({
+  car: {
+    type: Object,
+    required: true
+  }
+})
+
+// const car = {
+//   title: 'Tayota Tiguan RX5',
+//   currentBid: 50000,
+//   yourBid: 50000,
+//   images: [
+//     '/public/TemplateCarPic.png',
+//     '/public/TemplateCarPic.png',
+//     '/public/TemplateCarPic.png'
+//   ]
+// }
+
+const templateCarPicture = ref('/public/TemplateCarPic.png')
+const carTitle = ref('')
+const currentBid = ref(0)
+const userBid = ref(0);
+
 const slideId = ref(0)
 const router = useRouter()
 
-const templateCarPicture = ref('/public/TemplateCarPic.png')
-const carTitle = ref('Пример')
-const currentBid = ref(50000)
-const userBid = ref(50000);
+
+onMounted( () => {
+  carTitle.value = props.car.title
+  currentBid.value = props.car.currentBid
+  userBid.value = props.car.yourBid
+})
 
 function redirectToDetails() {
-  router.push({name: 'auctionSingle'})
+  router.push({name: 'auctionSingle',params: {id: 2}})
 }
 
 const makeBid = () => {
@@ -41,7 +56,7 @@ const makeBid = () => {
         >
           <v-carousel-item
               :aspect-ratio="388/418"
-              v-for="(img, i) in car.images"
+              v-for="(img, i) in props.car.images"
               :key="i"
               :src="img"
               cover
@@ -50,7 +65,7 @@ const makeBid = () => {
     </div>
     <div class="custom-indicators">
       <div
-          v-for="(img, index) in car.images"
+          v-for="(img, index) in props.car.images"
           :key="index"
           class="line"
           :class="{ active: slideId === index }"

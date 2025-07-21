@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import AuctionView from "@/views/AuctionView.vue";
 import AuctionSingleView from "@/views/AuctionSingleView.vue";
+import AccountView from "@/views/AccountView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -17,9 +18,15 @@ const router = createRouter({
       component: AuctionView,
     },
     {
-      path: '/auctionSingle',
+      path: '/auctionSingle/:id',
       name: 'auctionSingle',
       component: AuctionSingleView,
+      props: true
+    },
+    {
+      path: '/account',
+      name: 'account',
+      component: AccountView,
     }
   ],
 })
