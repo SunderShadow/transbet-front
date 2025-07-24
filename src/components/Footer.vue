@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import BidIcon from "@/components/icons/BidIcon.vue"
+import AccountIcon from "@/components/icons/AccountIcon.vue"
 
 </script>
 
@@ -9,9 +11,7 @@ import { ref } from 'vue'
         :to="{name: 'auction'}"
         class="footer-item"
     >
-      <svg viewBox="0 0 24 24">
-        <path d="M3 21h2v-2h14v2h2v-2a2 2 0 0 0-2-2h-2v-4h1l2-4-2-4h-1V3h-4v2h-2V3H7v2H6l-2 4 2 4h1v4H5a2 2 0 0 0-2 2v2z"/>
-      </svg>
+      <BidIcon />
       <span>Аукцион</span>
     </router-link>
 
@@ -29,9 +29,7 @@ import { ref } from 'vue'
         :to="{name: 'account'}"
         class="footer-item"
     >
-      <svg viewBox="0 0 24 24">
-        <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/>
-      </svg>
+      <AccountIcon />
       <span>Аккаунт</span>
     </router-link>
   </footer>
@@ -58,8 +56,12 @@ import { ref } from 'vue'
   font-size: 12px;
   cursor: pointer;
   transition: color 0.2s ease;
+  text-decoration: none;
 }
 
+.footer-item span {
+  font-size: 14px;
+}
 .footer-item svg {
   width: 24px;
   height: 24px;
