@@ -29,8 +29,13 @@ export const useAuctionStore = defineStore("auctionStore", () => {
         })
     }
 
+    function findLotByID(id: number): Lot|undefined {
+        return lots.value.find(i => i.id === id)
+    }
+
     return {
         lots,
-        init
+        init,
+        findLotByID
     }
 })
