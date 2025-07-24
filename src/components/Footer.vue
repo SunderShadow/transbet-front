@@ -15,15 +15,15 @@ import { ref } from 'vue'
       <span>Аукцион</span>
     </router-link>
 
-    <router-link
-        :to="{name: 'home'}"
-        class="footer-item"
-    >
-      <svg viewBox="0 0 24 24">
-        <path d="M13 2L3 14h7v8l10-12h-7z"/>
-      </svg>
-      <span>Мои ставки</span>
-    </router-link>
+<!--    <router-link-->
+<!--        :to="{name: 'home'}"-->
+<!--        class="footer-item"-->
+<!--    >-->
+<!--      <svg viewBox="0 0 24 24">-->
+<!--        <path d="M13 2L3 14h7v8l10-12h-7z"/>-->
+<!--      </svg>-->
+<!--      <span>Мои ставки</span>-->
+<!--    </router-link>-->
 
     <router-link
         :to="{name: 'account'}"

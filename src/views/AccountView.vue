@@ -17,7 +17,7 @@ function withdraw() {
 </script>
 // Ебланда на ЧатГПТ дала хреновые стили , надо будет подвигать кнопочки
 <template>
-    <v-card class="pa-4" elevation="1">
+    <v-card class="pa-4" elevation="0">
       <v-row no-gutters align="center" justify="start">
         <v-avatar size="80" class="mr-4">
           <v-img :src="userImg"/>
@@ -31,11 +31,12 @@ function withdraw() {
 
 
       <div class="text-body-1 mb-4">Лицевой счёт: {{balance}}</div>
-      <v-row justify="space-between">
-        <v-btn variant="outlined" color="success" class="w-48" @click="withdraw">
+      <v-row>
+        <v-btn variant="outlined" color="success" @click="withdraw">
           ВЫВЕСТИ
         </v-btn>
-        <v-btn variant="outlined" color="success" class="w-48" @click="withdraw">
+        <v-spacer />
+        <v-btn variant="outlined"  color="success" @click="withdraw">
           ВНЕСТИ
         </v-btn>
       </v-row>
