@@ -1,6 +1,5 @@
 <script setup>
-import Footer from "@/components/Footer.vue";
-import AuctionCard from "@/components/Auction-card.vue";
+import Footer from "@/components/Footer.vue"
 
 </script>
 
@@ -8,8 +7,3 @@ import AuctionCard from "@/components/Auction-card.vue";
   <RouterView/>
   <Footer/>
 </template>
-
-
-<style scoped>
-
-</style>

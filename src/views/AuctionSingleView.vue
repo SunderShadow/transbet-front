@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import AuctionCard from "@/components/Auction-card.vue";
+import AuctionCard from "@/components/AuctionCard.vue";
 import { ref , onMounted} from "vue";
 
 import axios from "axios";
